@@ -1,0 +1,5 @@
+---
+0000000000000001:
+  default:
+    type: untagged
+    vlans: [10]
