@@ -1,0 +1,44 @@
+---
+all:
+  type: untagged
+  vlans: [10]
+
+0000000000000001:
+  default:
+    type: untagged
+    vlans: [10]
+
+0000000000000002:
+  default:
+    type: untagged
+    vlans: [10]
+
+0000000000000003:
+  default:
+    type: untagged
+    vlans: [10]
+
+0000000000000004:
+  default:
+    type: untagged
+    vlans: [10]
+
+0000000000000005:
+  default:
+    type: untagged
+    vlans: [10]
+
+0000000000000006:
+  default:
+    type: untagged
+    vlans: [10]
+
+0000000000000007:
+  default:
+    type: untagged
+    vlans: [10]
+
+0000000000000008:
+  default:
+    type: untagged
+    vlans: [10]

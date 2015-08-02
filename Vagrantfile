@@ -5,6 +5,9 @@ Vagrant.configure(2) do |config|
   config.vm.synced_folder "valve/", "/home/vagrant/valve/"
   config.vm.synced_folder "projects/", "/home/vagrant/projects/"
 
+  config.ssh.forward_x11 = true
+  config.ssh.forward_agent = true
+
   config.vm.provision "shell", inline: <<-SHELL
       sudo apt-get update
       sudo apt-get dist-upgrade -y
