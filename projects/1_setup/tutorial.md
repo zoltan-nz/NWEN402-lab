@@ -1,6 +1,6 @@
 # Setup
 
-### 1. Playing with Simple Switch
+### Playing with Simple Switch
 
 Based on the following presentation: SDN Tutorial - Dean Pemberton - NSRC
 http://ecs.victoria.ac.nz/foswiki/pub/Events/SDNWorkshop/VUW_SDNTutorial_with_logos.pdf
@@ -117,3 +117,5 @@ mininet> iperf
 Waiting for iperf to start up...*** Results: ['38.0 Gbits/sec', '38.0 Gbits/sec']
 mininet>
 ```
+
+More info about `dpctl`: https://github.com/CPqD/ofsoftswitch13/wiki/Dpctl-Documentation
