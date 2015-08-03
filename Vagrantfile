@@ -4,6 +4,7 @@ Vagrant.configure(2) do |config|
 
   config.vm.synced_folder "valve/", "/home/vagrant/valve/"
   config.vm.synced_folder "projects/", "/home/vagrant/projects/"
+  config.vm.synced_folder "mininet/", "/home/vagrant/mininet/"
 
   config.ssh.forward_x11 = true
   config.ssh.forward_agent = true
