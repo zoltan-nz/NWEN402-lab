@@ -9,10 +9,12 @@ Vagrant.configure(2) do |config|
   config.ssh.forward_x11 = true
   config.ssh.forward_agent = true
 
+  config.vm.network "forwarded_port", guest: 80, host: 8080
+
   config.vm.provision "shell", inline: <<-SHELL
       sudo apt-get update
       sudo apt-get dist-upgrade -y
-      sudo apt-get install -y language-pack-en mininet python-{pip,dev,eventlet,routes,webob,paramiko,yaml} git curl zsh
+      sudo apt-get install -y language-pack-en mininet python-{pip,dev,eventlet,routes,webob,paramiko,yaml} git curl zsh nginx
       sudo /home/vagrant/mininet/util/install.sh
       sudo pip install ryu
       sudo apt-get autoremove -y
