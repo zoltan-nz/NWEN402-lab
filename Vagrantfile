@@ -11,13 +11,5 @@ Vagrant.configure(2) do |config|
 
   config.vm.network "forwarded_port", guest: 80, host: 8080
 
-  config.vm.provision "shell", inline: <<-SHELL
-      sudo apt-get update
-      sudo apt-get dist-upgrade -y
-      sudo apt-get install -y language-pack-en mininet python-{pip,dev,eventlet,routes,webob,paramiko,yaml} git curl zsh nginx
-      sudo /home/vagrant/mininet/util/install.sh
-      sudo pip install ryu
-      sudo apt-get autoremove -y
-      sudo apt-get autoclean -y
-  SHELL
+  config.vm.provision "shell", path: "provision.sh"
 end
