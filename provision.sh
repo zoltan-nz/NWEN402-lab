@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+sudo adduser vagrant sudo
+sudo adduser vagrant root
 sudo apt-get update
 sudo apt-get dist-upgrade -y
 sudo apt-get install -y language-pack-en mininet python-{pip,dev,eventlet,routes,webob,paramiko,yaml} git curl zsh nginx
