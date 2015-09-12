@@ -1,6 +1,12 @@
-[submodule "valve"]
-	path = valve
-	url = git@github.com:openvapour/valve.git
-[submodule "mininet"]
-	path = mininet
+[submodule "vendor/mininet"]
+	path = vendor/mininet
 	url = git@github.com:mininet/mininet.git
+[submodule "vendor/valve"]
+	path = vendor/valve
+	url = git@github.com:openvapour/valve.git
+[submodule "vendor/iperf"]
+	path = vendor/iperf
+	url = git@github.com:esnet/iperf.git
+[submodule "vendor/ryu"]
+	path = vendor/ryu
+	url = git@github.com:osrg/ryu.git
