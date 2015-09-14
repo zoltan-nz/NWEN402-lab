@@ -6,7 +6,6 @@ Vagrant.configure(2) do |config|
   config.vm.synced_folder "vendor/valve/", "/home/vagrant/vendor/valve/"
   config.vm.synced_folder "vendor/mininet/", "/home/vagrant/vendor/mininet/"
   config.vm.synced_folder "vendor/ryu/", "/home/vagrant/vendor/ryu/"
-  config.vm.synced_folder "vendor/iperf/", "/home/vagrant/vendor/iperf/"
 
   config.ssh.forward_x11 = true
   config.ssh.forward_agent = true

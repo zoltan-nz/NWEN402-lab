@@ -4,9 +4,6 @@
 [submodule "vendor/valve"]
 	path = vendor/valve
 	url = git@github.com:openvapour/valve.git
-[submodule "vendor/iperf"]
-	path = vendor/iperf
-	url = git@github.com:esnet/iperf.git
 [submodule "vendor/ryu"]
 	path = vendor/ryu
 	url = git@github.com:osrg/ryu.git

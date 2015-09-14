@@ -3,7 +3,7 @@ sudo adduser vagrant sudo
 sudo adduser vagrant root
 sudo apt-get update
 sudo apt-get dist-upgrade -y
-sudo apt-get install -y language-pack-en mininet python-{pip,dev,eventlet,routes,webob,paramiko,yaml} git curl zsh nginx
+sudo apt-get install -y language-pack-en mininet python-{pip,dev,eventlet,routes,webob,paramiko,yaml} git curl zsh nginx iperf3
 sudo /home/vagrant/vendor/mininet/util/install.sh
 sudo pip install ryu
 sudo apt-get autoremove -y
