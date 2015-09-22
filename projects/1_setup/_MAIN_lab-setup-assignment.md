@@ -52,7 +52,7 @@ My First experiment is running the `simple_switch_13.py` with ryu controller. Th
 SDN Tutorial - Dean Pemberton - NSRC 
 http://ecs.victoria.ac.nz/foswiki/pub/Events/SDNWorkshop/VUW_SDNTutorial_with_logos.pdf
 
-`ryu-manager --verbose ryu-manager --verbose ./projects/simple_switch_13.py`
+`ryu-manager --verbose ./projects/simple_switch_13.py`
 
 Note: This version of Simple Switch 13 is the latest from the ryu github page.
 

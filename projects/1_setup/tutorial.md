@@ -10,7 +10,7 @@ Open two console with `vagrant ssh`
 Run this in the first console
 
 ```
-ryu-manager --verbose ryu-manager --verbose ./projects/simple_switch_13.py
+ryu-manager --verbose ./projects/simple_switch_13.py
 ```
 
 Console log
