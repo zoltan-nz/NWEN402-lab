@@ -10,8 +10,10 @@ Vagrant.configure(2) do |config|
   config.ssh.forward_x11 = true
   config.ssh.forward_agent = true
 
+  # Ryu ofctl_rest.py - Ryu REST Api
+  config.vm.network :forwarded_port, guest: 8080, host: 8081
+  # nginx - web client
   config.vm.network :forwarded_port, guest: 80, host: 8080
-  config.vm.network :forwarded_port, guest: 5000, host: 5050
   config.vm.network :private_network, ip: "10.10.10.10"
 
   config.vm.provision "shell", path: "provision.sh"

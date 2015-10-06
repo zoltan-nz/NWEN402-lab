@@ -5,9 +5,9 @@
 Based on the following presentation: SDN Tutorial - Dean Pemberton - NSRC
 http://ecs.victoria.ac.nz/foswiki/pub/Events/SDNWorkshop/VUW_SDNTutorial_with_logos.pdf
 
-Open two console with `vagrant ssh`
+Open two terminals with `vagrant ssh`
 
-Run this in the first console
+Run this in the first terminal
 
 ```
 ryu-manager --verbose ./projects/simple_switch_13.py
@@ -33,7 +33,7 @@ BRICK ofp_event
   CONSUMES EventOFPSwitchFeatures
 ```
 
-In the other console: start mininet with 3 hosts connected to 1 switch
+In the other terminal: start mininet with 3 hosts connected to 1 switch
 
 
 ```
