@@ -1,10 +1,11 @@
 <h1>Stats</h1>
 
-<div class="well">
-    <ul class="nav nav-pills">
-      {{#link-to 'libraries.index' tagName="li"}}<a href>List all</a>{{/link-to}}
-      {{#link-to 'libraries.new' tagName="li"}}<a href>Add new</a>{{/link-to}}
-    </ul>
+<div class="row">
+    <div class="col-md-3">
+      {{partial 'stats/subnav'}}
+    </div>
+    <div class="col-md-9">
+      {{outlet}}
+    </div>
 </div>
 
-{{outlet}}

@@ -8,6 +8,11 @@ var Router = Ember.Router.extend({
 Router.map(function() {
   this.route('stats', function() {
     this.route('switches');
+    this.route('flow');
+    this.route('ports');
+    this.route('queues');
+    this.route('groups');
+    this.route('meters');
   });
 });
 
