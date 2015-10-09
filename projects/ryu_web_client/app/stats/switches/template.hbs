@@ -1,1 +1,9 @@
-{{outlet}}
+<h1>Get All Switches</h1>
+
+<div class="row">
+  {{#each model as |switch|}}
+    <div class="col-md-5">
+      {{switch-with-desc switch=switch desc=switch.desc}}
+    </div>
+  {{/each}}
+</div>

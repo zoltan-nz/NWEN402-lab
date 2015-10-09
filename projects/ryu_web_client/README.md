@@ -1,4 +1,60 @@
-# Ryu-web-client
+# Ryu Web Client
+
+Ryu Web Client is a frontend application to manage Ryu Open Flow Rest interface using a user friendly website. Built with Ember.js.
+
+Ryu Rest API: http://ryu.readthedocs.org/en/latest/app/ofctl_rest.html
+
+### Run this app
+
+1. Launch Open Flow Controller Rest Server in the VM
+
+    `ryu-manager ./vendor/ryu/ryu/app/ofctl_rest.py`
+
+2. Launch Mininet
+
+    `sudo mn --topo=tree,1,3 --mac --controller=remote --switch ovsk,protocols=OpenFlow13`
+
+3. Open Chrome withou CORS support
+
+(CORS support implementation WIP.)
+
+    `open -a Google\ Chrome --args --disable-web-security`
+
+
+### Namespace:
+
+`/stats`
+
+### Models:
+
+```
+Switch:
+  dpid
+  
+  desc -> Desc
+
+Desc:
+  mfr_desc
+  hw_desc
+  sw_desc
+  serial_num
+  dp_desc  
+  
+  s -> Switch
+
+### Endpoints
+
+Without endpoints.
+
+
+| URI | Model |
+| ----- | ----- |
+| GET `/switches` | `switch` |
+| GET `/desc/{switch_id}` | `desc` |
+| GET `/flow/{switch_id}` | `flow` |
+| POST `/flow/{switch_id}` | filter `switch` |
+
+# Original instructions for Ember Development
 
 This README outlines the details of collaborating on this Ember application.
 A short introduction of this app could easily go here.
