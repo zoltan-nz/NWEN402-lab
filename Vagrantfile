@@ -18,6 +18,8 @@ Vagrant.configure(2) do |config|
 
   config.vm.provision "shell", path: "provision.sh"
 
+  config.vm.provision "shell", run: "always", path: "always.sh"
+
   config.vm.provider 'virtualbox' do |v|
     v.gui = false
   end

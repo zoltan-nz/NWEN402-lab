@@ -4,7 +4,7 @@ import config from '../config/environment';
 export default DS.JSONAPIAdapter.extend({
 
   host: config.HOST,
-  namespace: 'stats/desc',
+  namespace: 'api/stats/desc',
 
   urlForFindRecord(id, modelName, snapshot) {
     return `${this.get('host')}/${this.get('namespace')}/${id}`;

@@ -8,5 +8,8 @@ sudo /home/vagrant/vendor/mininet/util/install.sh
 sudo pip install ryu
 sudo apt-get autoremove -y
 sudo apt-get autoclean -y
+sudo rm -rf /etc/nginx
 sudo rm -rf /var/www/html
+sudo ln -fs /vagrant/projects/etc/nginx /etc/nginx
 sudo ln -fs /vagrant/projects/ryu_web_client/dist /var/www/html
+sudo service nginx restart

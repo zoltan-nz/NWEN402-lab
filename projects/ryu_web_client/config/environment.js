@@ -18,9 +18,9 @@ module.exports = function(environment) {
       // when it is created
     },
 
-    // In development mode the Ember App running outside the Vagrant VM.
-    // The 8081 port mapped with 8080 inside the VM.
-    HOST: 'http://localhost:8081',
+    // Vagrant map 8080 to default 80 in VM.
+    // Nginx redirect manages the api requests.
+    HOST: 'http://localhost:8080',
     contentSecurityPolicy: {
       'default-src': "'self' http://localhost:* wss://localhost:*",
       'connect-src':"'self' http://localhost:*/* http://localhost:*/*"
