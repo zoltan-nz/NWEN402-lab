@@ -17,6 +17,14 @@ export default DS.JSONAPISerializer.extend({
                   type: 'desc',
                   id: dpid
                 }
+            },
+            flows: {
+              data: [
+                {
+                  type: 'flow',
+                  id: dpid
+                }
+              ]
             }
           }
         }

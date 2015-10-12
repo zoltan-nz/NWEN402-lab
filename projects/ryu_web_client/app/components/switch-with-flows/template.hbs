@@ -1,0 +1,31 @@
+<div class="panel-heading">
+    Datapath ID: {{switch.dpid}}
+</div>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>Table ID</th>
+        <th>Alive (seconds)</th>
+        <th>Priority</th>
+        <th>Packets</th>
+        <th>Bytes</th>
+        <th>In port</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    {{#each flows as |flow|}}
+    <tr>
+      <td>{{flow.table_id}}</td>
+      <td>{{flow.duration_sec}}</td>
+      <td>{{flow.priority}}</td>
+      <td>{{flow.packet_count}}</td>
+      <td>{{flow.byte_count}}</td>
+      <td>{{flow.match}}</td>
+      <td>{{flow.actions}}</td>
+    </tr>
+    {{/each}}
+
+    </tbody>
+</table>

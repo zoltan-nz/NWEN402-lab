@@ -14,6 +14,7 @@ Router.map(function() {
     this.route('groups');
     this.route('meters');
   });
+  this.route('add-flow')
 });
 
 export default Router;

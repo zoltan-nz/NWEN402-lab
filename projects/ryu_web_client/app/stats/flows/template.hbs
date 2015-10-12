@@ -1,0 +1,9 @@
+<h1>Get All Flows</h1>
+
+<div class="row">
+  {{#each model as |switch|}}
+    <div class="col-md-10">
+      {{switch-with-flows switch=switch flows=switch.flowsFromAjax}}
+    </div>
+  {{/each}}
+</div>
