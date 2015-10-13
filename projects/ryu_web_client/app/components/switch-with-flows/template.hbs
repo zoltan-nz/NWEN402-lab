@@ -15,17 +15,16 @@
     </tr>
     </thead>
     <tbody>
-    {{#each flows as |flow|}}
-    <tr>
-      <td>{{flow.table_id}}</td>
-      <td>{{flow.duration_sec}}</td>
-      <td>{{flow.priority}}</td>
-      <td>{{flow.packet_count}}</td>
-      <td>{{flow.byte_count}}</td>
-      <td>{{flow.match}}</td>
-      <td>{{flow.actions}}</td>
-    </tr>
-    {{/each}}
-
+      {{#each flows as |flow|}}
+        <tr>
+          <td>{{flow.table_id}}</td>
+          <td>{{flow.duration_sec}}</td>
+          <td>{{flow.priority}}</td>
+          <td>{{flow.packet_count}}</td>
+          <td>{{flow.byte_count}}</td>
+          <td>{{flow.match}}</td>
+          <td>{{flow.actions}}</td>
+        </tr>
+      {{/each}}
     </tbody>
 </table>

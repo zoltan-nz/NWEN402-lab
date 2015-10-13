@@ -1,0 +1,68 @@
+<h1>Add a new Flow</h1>
+
+<h3>1. Select a switch first</h3>
+
+{{#each switches as |switch|}}
+  <button class="btn btn-default {{if switch.isSelected 'btn-success'}}" {{action 'selectSwitch' switch}}>{{switch.dpid}}</button>
+{{/each}}
+
+{{#if selectedSwitch}}
+  <h3>2. Setup new flow rule</h3>
+
+  <div class="form-horizontal">
+    <div class="form-group">
+      <label class="col-sm-2 control-label">Cookie:</label>
+      <div class="col-sm-4">
+        {{input class="form-control" value=model.cookie}}
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-sm-2 control-label">Table ID:</label>
+      <div class="col-sm-4">
+        {{input class="form-control" value=model.table_id}}
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-sm-2 control-label">Idle timeout:</label>
+      <div class="col-sm-4">
+        {{input class="form-control" value=model.idle_timeout}}
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-sm-2 control-label">Hard timeout:</label>
+      <div class="col-sm-4">
+        {{input class="form-control" value=model.hard_timeout}}
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-sm-2 control-label">Priority:</label>
+      <div class="col-sm-4">
+        {{input class="form-control" value=model.priority}}
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-sm-2 control-label">Match:</label>
+      <div class="col-sm-4">
+        {{input class="form-control" value=model.match placeholder='{"in_port":1}'}}
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-sm-2 control-label">Actions:</label>
+      <div class="col-sm-4">
+        {{input class="form-control" value=model.actions placeholder='[{"type":"OUTPUT","port": 4}]'}}
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-4">
+      <button class="btn btn-default" {{action 'addFlow'}}>Add Flow</button>
+    </div>
+  </div>
+{{/if}}
