@@ -18,16 +18,31 @@ export default Ember.Route.extend({
 
   actions: {
     addFlow() {
-      var url = `${config.HOST}/api/stats/flowentry/add`;
-      var type = 'POST';
-      var data = JSON.parse(this.mapped());
-      var dataType = 'json';
-      var headers = {'Access-Control-Allow-Origin': '*'};
+      var newFlow = this.controller.get('model');
+      var dpid = this.controller.get('selectedSwitch').get('dpid');
 
-      Ember.$.post(url, data)
-      .done(() => {
-        this.controller.set('responseMessage', 'New flow entry added');
-      })
+      var _that = this;
+
+      newFlow.set('dpid', dpid);
+      newFlow.save();
+      //  .then(function() {
+      //  _that.controller.set('successResponseMessage', true);
+      //  _that.controller.set('errorResponseMessage', false);
+      //}, function() {
+      //  _that.controller.set('errorResponseMessage', true);
+      //  _that.controller.set('successResponseMessage', false)
+      //});
+
+      //var url = `${config.HOST}/api/stats/flowentry/add`;
+      //var type = 'POST';
+      //var data = JSON.parse(this.mapped());
+      //var dataType = 'json';
+      //var headers = {'Access-Control-Allow-Origin': '*'};
+      //
+      //Ember.$.post(url, data)
+      //.done(() => {
+      //  this.controller.set('responseMessage', 'New flow entry added');
+      //})
     }
   },
 
