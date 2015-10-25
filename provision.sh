@@ -4,7 +4,9 @@ sudo adduser vagrant root
 sudo apt-get update
 sudo apt-get dist-upgrade -y
 sudo apt-get install -y language-pack-en python-{pip,dev,eventlet,routes,webob,paramiko,yaml} git curl zsh nginx iperf3
-sudo /home/vagrant/vendor/mininet/util/install.sh
+# Run mininet install moduls: k) kernel, n) mn_deps, f) of, p) pox, b) cbench, y) ryu, 3) 1.3, x) nox
+sudo /home/vagrant/vendor/mininet/util/install.sh -knfpby3x
+sudo rm -rf home/vagrant/oflops home/vagrant/openflow home/vagrant/pox home/vagrant/ryu
 sudo pip install ryu
 sudo apt-get autoremove -y
 sudo apt-get autoclean -y
