@@ -8,6 +8,7 @@ sudo apt-get install -y language-pack-en python-{pip,dev,eventlet,routes,webob,p
 sudo /home/vagrant/vendor/mininet/util/install.sh -knfpby3x
 sudo rm -rf home/vagrant/oflops home/vagrant/openflow home/vagrant/pox home/vagrant/ryu
 sudo pip install ryu
+sudo apt-get install openvswitch-switch
 sudo apt-get autoremove -y
 sudo apt-get autoclean -y
 sudo rm -rf /etc/nginx

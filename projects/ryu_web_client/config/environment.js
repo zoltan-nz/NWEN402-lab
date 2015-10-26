@@ -20,14 +20,26 @@ module.exports = function(environment) {
 
     // Vagrant map 8080 to default 80 in VM.
     // Nginx redirect manages the api requests.
-    HOST: 'http://localhost:8080',
-    contentSecurityPolicy: {
-      'default-src': "'self' http://localhost:* wss://localhost:*",
-      'connect-src':"'self' http://localhost:*/* http://localhost:*/*"
-    }
+    HOST: 'http://localhost:8080'
+    //,contentSecurityPolicy: {
+    //  'default-src': "'self' http://localhost:* wss://localhost:*",
+    //  'connect-src':"'self' http://localhost:*/* http://localhost:*/*"
+    //}
   };
 
-  if (environment === 'development') {
+  ENV.contentSecurityPolicy = {
+    'default-src': "'none'",
+    'frame-src':   "*",
+    'object-src':  "*",
+    'script-src':  "'self' 'unsafe-inline' 'unsafe-eval' *",
+    'font-src':    "'self' *",
+    'connect-src': "'self' *",
+    'img-src':     "'self' *",
+    'style-src':   "'self' 'unsafe-inline' *",
+    'media-src':   "'self' *"
+  };
+
+      if (environment === 'development') {
      //ENV.APP.LOG_RESOLVER = true;
      ENV.APP.LOG_ACTIVE_GENERATION = true;
      ENV.APP.LOG_TRANSITIONS = true;

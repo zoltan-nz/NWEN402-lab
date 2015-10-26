@@ -1,5 +1,4 @@
 import Ember from 'ember';
-import config from '../config/environment';
 
 export default Ember.Route.extend({
 
@@ -13,36 +12,24 @@ export default Ember.Route.extend({
 
     this.store.findAll('switch').then((switches) => {
       controller.set('switches', switches);
-    })
+    });
   },
 
   actions: {
     addFlow() {
+
+      this.controller.set('successResponseMessage', false);
+      this.controller.set('errorResponseMessage', false);
+
       var newFlow = this.controller.get('model');
       var dpid = this.controller.get('selectedSwitch').get('dpid');
 
-      var _that = this;
-
       newFlow.set('dpid', dpid);
-      newFlow.save();
-      //  .then(function() {
-      //  _that.controller.set('successResponseMessage', true);
-      //  _that.controller.set('errorResponseMessage', false);
-      //}, function() {
-      //  _that.controller.set('errorResponseMessage', true);
-      //  _that.controller.set('successResponseMessage', false)
-      //});
-
-      //var url = `${config.HOST}/api/stats/flowentry/add`;
-      //var type = 'POST';
-      //var data = JSON.parse(this.mapped());
-      //var dataType = 'json';
-      //var headers = {'Access-Control-Allow-Origin': '*'};
-      //
-      //Ember.$.post(url, data)
-      //.done(() => {
-      //  this.controller.set('responseMessage', 'New flow entry added');
-      //})
+      newFlow.save().then(() => {
+        this.controller.set('successResponseMessage', true);
+      }, () => {
+        this.controller.set('errorResponseMessage', true);
+      });
     }
   },
 
@@ -62,7 +49,7 @@ export default Ember.Route.extend({
       flags: model.get('flags'),
       match: JSON.parse(model.get('match')),
       actions: JSON.parse(model.get('actions'))
-    }
+    };
   }
 
-})
+});

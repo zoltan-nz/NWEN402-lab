@@ -1,4 +1,5 @@
 At the moment, launch mininet and ryu manually.
+Possible improvement could be to implement on web interface a remote controller for launching mininet, ryu-manager.
 
 Inside VM:
 
