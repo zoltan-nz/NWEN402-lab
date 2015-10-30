@@ -1,28 +1,29 @@
 <div class="row">
     <div class="col-md-12">
-        <h4>0. Open ssh terminal in the VM</h4>
+        <h4>0. Open ssh terminal in VM</h4>
             <pre>vagrant ssh</pre>
-        <h4>1. Checking Open Flow Controller Rest Server status</h4>
+        <h4>1. Chek Open Flow Controller Rest Server status</h4>
       {{#if serverOnline}}
           <div class="alert alert-success">
-              Open Flow controller REST server is online. Please jump to the next step.
+              Open Flow controller REST server is online. Please go to the next step.
           </div>
       {{else}}
           <div class="alert alert-danger">
-              Open Flow controller REST server is offline, please launch it with the following command.
+              Open Flow controller REST server is offline, please launch it with the following command inside VM.
           </div>
           <pre>ryu-manager ./vendor/ryu/ryu/app/ofctl_rest.py</pre>
       {{/if}}
-        <h4>2. Launch Mininet in the VM</h4>
+        <h4>2. Launch Mininet in VM</h4>
+        Example:
         <pre>sudo mn --topo=tree,1,3 --mac --controller=remote --switch ovsk,protocols=OpenFlow13</pre>
 
-        <h4>3. Check Stats menu point and click Switches</h4>
-        <p>You should the list of available switches.</p>
+        <h4>3. Check Stats menu point and click {{link-to 'Switches' 'stats.switches'}}</h4>
+        <p>It lists all available switches.</p>
 
-        <h4>4. You can add new flow rules with clicking on Add Flow</h4>
+        <h4>4. Add new flow rules by clicking on {{link-to 'Add Flow' 'add-flow'}}</h4>
         <p>Use the given format for creating Match and Actions.</p>
 
-        <h4>5. Check flows clicking on Stats menu and Flows submenu.</h4>
-        <p>You will see all the switches and connected flows.</p>
+        <h4>5. Check flows clicking on {{link-to 'Stats' 'stats'}} menu and {{link-to 'Flows' 'stats.flows'}} submenu.</h4>
+        <p>It shows all switches and connected flows.</p>
     </div>
 </div>
