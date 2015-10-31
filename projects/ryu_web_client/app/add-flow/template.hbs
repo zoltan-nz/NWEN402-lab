@@ -45,24 +45,26 @@
         </div>
       </div>
 
-      <div class="form-group">
+      <div class="form-group has-feedback {{if isMatchValid 'has-success'}}">
         <label class="col-sm-2 control-label">Match:</label>
         <div class="col-sm-4">
           {{input class="form-control" value=model.match placeholder='{"in_port":1}'}}
+          {{#if isMatchValid}}<span class="glyphicon glyphicon-ok form-control-feedback"></span>{{/if}}
         </div>
       </div>
 
-      <div class="form-group">
+      <div class="form-group has-feedback {{if isActionsValid 'has-success'}}">
         <label class="col-sm-2 control-label">Actions:</label>
         <div class="col-sm-4">
           {{input class="form-control" value=model.actions placeholder='[{"type":"OUTPUT","port": 4}]'}}
+          {{#if isActionsValid}}<span class="glyphicon glyphicon-ok form-control-feedback"></span>{{/if}}
         </div>
       </div>
     </div>
 
     <div class="form-group">
       <div class="col-sm-offset-2 col-sm-4">
-        <button class="btn btn-default" {{action 'addFlow'}}>Add Flow</button>
+        <button class="btn btn-success" {{action 'addFlow'}} disabled="{{unless isFormValid 'disabled'}}">Add Flow</button>
       </div>
     </div>
   </div>

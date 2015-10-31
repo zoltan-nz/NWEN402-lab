@@ -3,12 +3,11 @@ import config from '../config/environment';
 
 export default Ember.Route.extend({
 
-activate() {
-  this.checkStatus();
-},
+  activate() {
+    this.checkStatus();
+  },
 
   checkStatus() {
-    console.log('this was called');
     Ember.$.get(`${config.HOST}/api/stats/switches`).done(() => {
       this.get('controller').set('serverOnline', true);
     }).fail(() => {

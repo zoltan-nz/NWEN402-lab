@@ -4,6 +4,16 @@ export default Ember.Controller.extend({
 
   selectedSwitch: null,
 
+  isFormValid: Ember.computed.and('isMatchValid', 'isActionsValid'),
+
+  isMatchValid: Ember.computed('model.match', function() {
+    return this._isValidJson(this.get('model.match'));
+  }),
+
+  isActionsValid: Ember.computed('model.actions', function() {
+    return this._isValidJson(this.get('model.actions'));
+  }),
+
   actions: {
     selectSwitch(sw) {
       this.set('selectedSwitch', sw);
@@ -20,6 +30,16 @@ export default Ember.Controller.extend({
       this.set('successResponseMessage', false);
       this.set('errorResponseMessage', false);
     }
+  },
+
+  _isValidJson(value) {
+    try {
+      JSON.parse(value);
+    } catch(e) {
+      return false
+    }
+
+    return true;
   }
 
 });
